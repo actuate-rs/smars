@@ -20,8 +20,18 @@ defmt = "0.3"
 defmt-rtt = "0.4"
 panic-probe = { version = "0.3", features = ["print-defmt"] }
 cortex-m-semihosting = "0.5.0"
-# TODO(4) enter your HAL here
-# some-hal = "1.2.3"
+embedded-alloc = "0.5.1"
+panic-halt = "0.2.0"
+
+[dependencies.actuate]
+# git = "https://github.com/actuate-rs/actuate"
+path = "../actuate"
+default-features = false
+
+[dependencies.stm32f1xx-hal]
+version = "0.10.0"
+features = ["rt", "stm32f103", "medium"]
+
 
 [dev-dependencies]
 defmt-test = "0.3"
